@@ -1,0 +1,23 @@
+# Use this file to templatize your application's native configuration files.
+# See the docs at https://www.habitat.sh/docs/create-packages-configure/.
+
+[client]
+bind_addr = "0.0.0.0"
+client_addr = "127.0.0.1"
+data_dir = "/hab/svc/consul-client/data/consul"
+datacenter = "dc1"
+loglevel = "INFO"
+
+[ports]
+# The DNS server, -1 to disable
+dns = 8600
+# The HTTP API, -1 to disable
+http = 8500
+# The HTTPS API, -1 to disable
+https = -1
+# The Serf LAN port
+serf_lan = 8301
+# The Serf WAN port
+serf_wan = 8302
+# Server RPC address
+server = 8300

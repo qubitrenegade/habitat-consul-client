@@ -1,0 +1,15 @@
+{
+  "datacenter": "{{cfg.client.datacenter}}",
+  "data_dir": "{{cfg.client.data_dir}}",
+  "log_level": "{{cfg.client.loglevel}}",
+  "bind_addr": "{{cfg.client.bind_addr}}",
+  "client_addr": "{{cfg.client.client_addr}}",
+  "ports": {
+    "dns": {{cfg.ports.dns}},
+    "http": {{cfg.ports.http}},
+    "https": {{cfg.ports.https}},
+    "serf_lan": {{cfg.ports.serf_lan}},
+    "serf_wan": {{cfg.ports.serf_wan}},
+    "server": {{cfg.ports.server}}
+  }
+}
