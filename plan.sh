@@ -15,6 +15,9 @@ pkg_bin_dirs=(bin)
 pkg_description="Habitat plan for Consul running in agent or client mode; https://github.com/qubitrenegade/habitat-consul-client"
 pkg_upstream_url="https://consul.io"
 
+pkg_svc_user="root"
+pkg_svc_group="$pkg_svc_user"
+
 pkg_binds_optional=(
   [consul-server]="port-http"
 )
