@@ -4,6 +4,11 @@
   "log_level": "{{cfg.client.loglevel}}",
   "bind_addr": "{{cfg.client.bind_addr}}",
   "client_addr": "{{cfg.client.client_addr}}",
+  "retry_join": [
+  {{~#eachAlive bind.consul-server.members as |member|}}
+    "{{member.sys.ip}}"{{~#unless @last}},{{/unless}}
+  {{~/eachAlive}}
+  ],
   "ports": {
     "dns": {{cfg.ports.dns}},
     "http": {{cfg.ports.http}},
