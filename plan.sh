@@ -19,11 +19,10 @@ pkg_svc_user="root"
 pkg_svc_group="$pkg_svc_user"
 
 pkg_exports=(
-  [client_addr]=client.client_addr
-  [http_port]=ports.http
-  [dns_port]=ports.dns
+  [client_addr]="client.client_addr"
+  [http_port]="ports.http"
+  [dns_port]="ports.dns"
 )
-pkg_exposes=(client_addr http_port dns_port)
 
 pkg_binds_optional=(
   [consul-server]="port-http"
