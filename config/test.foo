@@ -1,0 +1,6 @@
+{
+{{ #each cfg.configs}}
+  "{{@key}}": {{ toJson this}}{{#unless @last}},{{/unless}}
+  
+{{ /each }}
+}
