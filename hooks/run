@@ -2,4 +2,4 @@
 
 exec 2>&1
 
-consul-client agent -config-file={{pkg.svc_config_path}}/agent.json
+consul-client agent -config-file={{pkg.svc_config_path}}/agent.json -config-dir={{pkg.svc_config_path}}
