@@ -1,0 +1,9 @@
+{
+  "service": {
+    "name": "chef",
+    "meta": {
+      "meta": "for my service"
+    },
+    "enable_tag_override": true
+  }
+}
