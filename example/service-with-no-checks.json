@@ -1,0 +1,9 @@
+{
+  "client": {
+    "enable_script_checks": true
+  },
+  "service":{ 
+    "name": "simple-service-no-checks", 
+    "enable_tag_override": true
+  }
+}
