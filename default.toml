@@ -3,7 +3,7 @@
 
 [client]
 datacenter = "dc1"
-loglevel = "INFO"
+log_level = "INFO"
 client_addr = "127.0.0.1"
 
 # Overridable defaults
@@ -54,7 +54,7 @@ id = "redis01"
 name = "redis"
 tags = ["primary", "another tag"]
 address = ""
-port = "9000"
+port = 9000
 enable_tag_override = true
 
 [services.meta]
@@ -69,7 +69,7 @@ id = "redis02"
 name = "redis"
 tags = ["secondary"]
 address = ""
-port = "7000"
+port = 7000
 enable_tag_override = true
 
 [services.meta]
