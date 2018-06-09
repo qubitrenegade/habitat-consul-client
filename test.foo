@@ -1,5 +1,0 @@
-{{# each cfg.configs as |name, data| }}
-# {{name}}.cfg
-{{toJson data}}
-<<THIS_IS_MY_DELIMITER>>
-{{ /each }}
