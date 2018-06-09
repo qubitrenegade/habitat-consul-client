@@ -1,8 +1,21 @@
 {
   "datacenter": "{{cfg.client.datacenter}}",
+  {{ #if cfg.client.data_dir }}
   "data_dir": "{{cfg.client.data_dir}}",
+  {{ else }}
+  "data_dir": "{{pkg.svc_data_path}}",
+  {{ /if }}
   "log_level": "{{cfg.client.loglevel}}",
+  {{ #if cfg.client.bind_addr }}
   "bind_addr": "{{cfg.client.bind_addr}}",
+  {{ else }}
+  "bind_addr": "{{sys.ip}}",
+  {{ /if }}
+  {{ #if cfg.client.advertise_addr }}
+  "advertise_addr": "{{cfg.client.advertise}}",
+  {{ #else }}
+  "advertise_addr": "{{sys.ip}}",
+  {{ /if }}
   "client_addr": "{{cfg.client.client_addr}}",
   "retry_join": [
   {{~#eachAlive bind.consul-server.members as |member|}}

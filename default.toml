@@ -2,11 +2,18 @@
 # See the docs at https://www.habitat.sh/docs/create-packages-configure/.
 
 [client]
-bind_addr = "0.0.0.0"
-client_addr = "127.0.0.1"
-data_dir = "/hab/svc/consul-client/data/consul"
 datacenter = "dc1"
 loglevel = "INFO"
+client_addr = "127.0.0.1"
+
+# Overridable defaults
+# default to binding to the {{sys.ip}} address.
+# bind_addr = "0.0.0.0"
+# specify this in your user.toml to designate an advertise IP address
+# defaults to {{sys.ip}}
+# advertise_addr = "172.17.0.2"
+#
+# data_dir = "/hab/svc/consul-client/data/consul"
 
 [ports]
 # The DNS server, -1 to disable
@@ -22,43 +29,52 @@ serf_wan = 8302
 # Server RPC address
 server = 8300
 
-[configs.foo]
-bar = "baz"
-asdf = "foo"
+#### Service Definitions
+# refer to Consul documentation for details:
+# https://www.consul.io/docs/agent/services.html
 
-[configs.bar]
-biz = "boz"
+## Example single service definition
+# [service]
+# name = "redis"
+# tags = ["primary"]
+# address = ""
+# port = "8000"
+# enable_tag_override = true
 
-[service]
+# [service.meta]
+# meta = "I'm So Meta, Even This Acronym"
+
+# [[service.checks]]
+# args = ["/usr/local/bin/check_redis.py"]
+# interval = "10s"
+
+## Example multiple servicde definition:
+[[services]]
+id = "redis01"
 name = "redis"
-tags = ["primary"]
+tags = ["primary", "another tag"]
 address = ""
-port = "8000"
+port = "9000"
 enable_tag_override = true
 
-[service.meta]
-meta = "I'm So Meta, Even This Acronym"
+[services.meta]
+meta = "Less meta"
 
-[[service.checks]]
-args = ["/usr/local/bin/check_redis.py"],
+[[services.checks]]
+args = ["/usr/local/bin/check_redis.py"]
 interval = "10s"
 
-
 [[services]]
+id = "redis02"
+name = "redis"
+tags = ["secondary"]
+address = ""
+port = "7000"
+enable_tag_override = true
 
-    {
-      "id": "red0",
-      "name": "redis",
-      "tags": [
-        "primary"
-      ],
-      "address": "",
-      "port": 6000,
-      "checks": [
-        {
-          "args": ["/bin/check_redis", "-p", "6000"],
-          "interval": "5s",
-          "ttl": "20s"
-        }
-      ]
-    }
+[services.meta]
+meta = "Less meta"
+
+[[services.checks]]
+args = ["/usr/local/bin/check_redis.py"]
+interval = "10s"
