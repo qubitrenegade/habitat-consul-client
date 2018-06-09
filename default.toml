@@ -50,32 +50,32 @@ server = 8300
 # interval = "10s"
 
 ## Example multiple servicde definition:
-[[services]]
-id = "redis01"
-name = "redis"
-tags = ["primary", "another tag"]
-address = ""
-port = 9000
-enable_tag_override = true
+# [[services]]
+# id = "redis01"
+# name = "redis"
+# tags = ["primary", "another tag"]
+# address = ""
+# port = 9000
+# enable_tag_override = true
+# 
+# [services.meta]
+# meta = "Less meta"
+# 
+# [[services.checks]]
+# args = ["/usr/local/bin/check_redis.py"]
+# interval = "10s"
+# 
+# [[services]]
+# id = "redis02"
+# name = "redis"
+# tags = ["secondary"]
+# address = ""
+# port = 7000
+# enable_tag_override = true
+# 
+# [services.meta]
+# meta = "Less meta"
 
-[services.meta]
-meta = "Less meta"
-
-[[services.checks]]
-args = ["/usr/local/bin/check_redis.py"]
-interval = "10s"
-
-[[services]]
-id = "redis02"
-name = "redis"
-tags = ["secondary"]
-address = ""
-port = 7000
-enable_tag_override = true
-
-[services.meta]
-meta = "Less meta"
-
-[[services.checks]]
-args = ["/usr/local/bin/check_redis.py"]
-interval = "10s"
+# [[services.checks]]
+# args = ["/usr/local/bin/check_redis.py"]
+# interval = "10s"
