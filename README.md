@@ -10,17 +10,19 @@ Consul is one binary that can be run in either Server or Client mode based on co
 
 ## Usage
 
-run it yo!
+Extended usage instructions can be found [here](https://qubitrenegade.com/habitat/consul/docker/2018/06/06/Habitat-and-Consul-client-mode.html)
 
-Desired usage would be:
+Most basica usage is:
 
 ```
 # on the hab server(s) (where 999.999.999.999 is repleaced with a real peer IP)
 hab svc start core/consul --topology leader --group default --peer 999.999.999.999
 
 # on the client node:
-hab svc start --bind consul-server:consul.default
+hab svc start --peer 999.999.999.999 --bind consul-server:consul.default
 ```
+
+Refer to the `default.toml` for extended configuration options.
 
 ## Example Usage
 
