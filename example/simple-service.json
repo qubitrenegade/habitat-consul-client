@@ -1,0 +1,15 @@
+{
+  "client": {
+    "enable_script_checks": true
+  },
+  "service": {
+    "name": "simple-service",
+    "checks": [
+      {
+        "name": "is_alive",
+        "args": ["/bin/true"],
+	"interval": "1s"
+      }
+    ]
+  }
+}

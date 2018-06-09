@@ -1,0 +1,19 @@
+{
+  "service": {
+    "name": "redis",
+    "tags": ["primary"],
+    "address": "",
+    "meta": {
+      "meta": "for my service"
+    },
+    "port": 8000,
+    "enable_tag_override": false,
+    "checks": [
+      {
+        "args": ["/usr/local/bin/check_redis.py"],
+        "interval": "10s"
+      }
+    ]
+  }
+}
+
