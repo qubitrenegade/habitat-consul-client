@@ -1,14 +1,9 @@
 {
   {{ #if cfg.service }}
-    {{toJson cfg.service}}
+    "service": {{toJson cfg.service}}{{#if cfg.services}},{{/if}}
   {{ /if }}
   {{ #if cfg.services}}
-    {{toJson cfg.services}}
+    "services": {{toJson cfg.services}}
   {{ /if }}
 }
-
-
-
-
-
 
