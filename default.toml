@@ -5,6 +5,7 @@
 datacenter = "dc1"
 log_level = "INFO"
 client_addr = "127.0.0.1"
+enable_script_checks = false
 
 # Overridable defaults
 # default to binding to the {{sys.ip}} address.

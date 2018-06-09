@@ -17,6 +17,7 @@
   "advertise_addr": "{{sys.ip}}",
   {{ /if }}
   "client_addr": "{{cfg.client.client_addr}}",
+  "enable_script_checks": {{cfg.client.enable_script_checks}},
   "retry_join": [
   {{~#eachAlive bind.consul-server.members as |member|}}
     "{{member.sys.ip}}"{{~#unless @last}},{{/unless}}
