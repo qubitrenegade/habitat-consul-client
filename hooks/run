@@ -1,5 +1,6 @@
-#!/bin/bash -xe
+#!{{pkgPathFor "core/bash"}}/bin/bash -xe
 
 exec 2>&1
 
-consul-client agent -config-file={{pkg.svc_config_path}}/agent.json
+exec consul agent -config-file={{pkg.svc_config_path}}/agent.json \
+	-config-file={{pkg.svc_config_path}}/service.json
