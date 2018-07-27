@@ -3,14 +3,14 @@
 pkg_name=consul-client
 pkg_distname=consul
 pkg_origin=qubitrenegade
-pkg_version="1.1.0"
+pkg_version="1.2.1"
 pkg_maintainer="QubitRenegade <qubitrenegade@gmail.com>"
 pkg_license=("MPL-2")
 pkg_source="https://releases.hashicorp.com/${pkg_distname}/${pkg_version}/${pkg_distname}_${pkg_version}_linux_amd64.zip"
 pkg_filename=${pkg_name}-${pkg_version}_linux_amd64.zip
-pkg_shasum="09c40c8b5be868003810064916d8460bff334ccfb59a5046390224b27e052c45"
+pkg_shasum="e4146334be453146890023303da3e0c815669e108a18fb7d742745df3414a31a"
 pkg_deps=(core/bash)
-pkg_build_deps=(core/unzip)
+pkg_build_deps=()
 pkg_bin_dirs=(bin)
 pkg_description="Habitat plan for Consul running in agent or client mode; https://github.com/qubitrenegade/habitat-consul-client"
 pkg_upstream_url="https://consul.io"
