@@ -12,10 +12,20 @@ pkg_shasum="e4146334be453146890023303da3e0c815669e108a18fb7d742745df3414a31a"
 pkg_deps=(core/bash)
 pkg_build_deps=()
 pkg_bin_dirs=(bin)
-pkg_description="Habitat plan for Consul running in agent or client mode; https://github.com/qubitrenegade/habitat-consul-client"
+pkg_description=<<EODeprecateNotice
+  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  !!!     DEPRECATION NOTICE     !!!
+  !!!PLEASE USE qbr/consul-client!!!
+  !!!  LAST RELEASE OF THIS REPO !!!
+  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+  Habitat plan for Consul running in "agent" or "client" mode
+
+  For usage Instructions, see: https://github.com/qubitrenegade/habitat-consul-client
+EODeprecateNotice
 pkg_upstream_url="https://consul.io"
 
-pkg_svc_user="root"
+pkg_svc_user="hab"
 pkg_svc_group="$pkg_svc_user"
 
 pkg_exports=(
