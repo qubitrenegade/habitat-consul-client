@@ -2,7 +2,7 @@
 # See full docs at https://www.habitat.sh/docs/reference/plan-syntax/
 pkg_name=consul-client
 pkg_distname=consul
-pkg_origin=qubitrenegade
+pkg_origin=qbr
 pkg_version="1.2.1"
 pkg_maintainer="QubitRenegade <qubitrenegade@gmail.com>"
 pkg_license=("MPL-2")
@@ -12,17 +12,12 @@ pkg_shasum="e4146334be453146890023303da3e0c815669e108a18fb7d742745df3414a31a"
 pkg_deps=(core/bash)
 pkg_build_deps=()
 pkg_bin_dirs=(bin)
-pkg_description=<<EODeprecateNotice
-  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  !!!     DEPRECATION NOTICE     !!!
-  !!!PLEASE USE qbr/consul-client!!!
-  !!!  LAST RELEASE OF THIS REPO !!!
-  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-  Habitat plan for Consul running in "agent" or "client" mode
+pkg_description=<<EODescription
+  Habitat plan for Consul running in "agent" or "client" mode, registering a service.
+  (AKA, it registers a service and does not particpate in gossip)
 
   For usage Instructions, see: https://github.com/qubitrenegade/habitat-consul-client
-EODeprecateNotice
+EODescription
 pkg_upstream_url="https://consul.io"
 
 pkg_svc_user="hab"
